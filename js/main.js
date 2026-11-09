@@ -4,7 +4,7 @@
 
   var DATA = {
     phone: '+79293612000',
-    open: 17, close: 2,              // часы работы, по Омску (UTC+6)
+    open: 17, close: [2, 2, 2, 2, 2, 4, 4],   // до скольки работаем: вс, пн … сб (ночь после этого дня), по Омску
     events: [
       { date: '2026-10-29', time: '19:00', title: 'Сигарная школа спортивного покера', img: 'img/ev-poker.jpg',
         text: 'River Room × Dr. Watson × Oldman Club: сигарная культура встретилась со спортивным покером в камерной атмосфере закрытого клуба.',
@@ -32,6 +32,15 @@
       ['Negroni', 'джин, Martini Rosso, Campari', '1 250'],
       ['Black Sabbath', 'Ardbeg 10, Fernet Branca, абсент, Angostura', '1 700'],
       ['Espresso Martini', 'водка, Kahlua, ваниль, кофе', '600']
+    ],
+    reviews: [                       // Яндекс Карты, дословно (raw/ym/reviews.json)
+      ['Георгий М.', 'август 2026', 'Атмосфера и обстановка классического сигарного клуба. Элитный алкоголь, коктейли, кальяны оставят у Вас приятное впечатление. Место для приятного отдыха и разговоров.'],
+      ['yas', 'август 2026', 'в Августе были , место отличное , приятно удивил интерьер очень круто запах чистого дерева . Напитки на уровне , еда вкусная.  Супер  рекомендую ТОП места'],
+      ['Denis Balyatin', 'август 2026', 'Рад открытию нового заведения на старом месте, не просто сохранили интерьер, но и обещают много нового. Отличный выбор напитков, прекрасные кальяны'],
+      ['Антон Т.', 'август 2026', 'Был в заведении, курил сигары . Все очень круто. Рекомендую к посещению'],
+      ['Mikhail K.', 'август 2026', 'в прошлые выходные собирались с друзьями. очень понравилось обслуживание. душевное место, кальян ТОП'],
+      ['Алексей С.', 'август 2026', 'Атмосфера, обслуживание, кальяны и напитки на высоте. Отличное заведение'],
+      ['Михаил Иванов', 'август 2026', 'Уютно и стильно , все на высоте - спасиб ребята 🤝']
     ],
     gallery: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'].map(function (n) { return 'img/gal/' + n + '.jpg'; })
   };
@@ -82,9 +91,12 @@
   /* открыто / закрыто */
   var st = $('#status');
   function status() {
-    var h = omskNow().getHours(), open = h >= DATA.open || h < DATA.close, t;
-    if (open) t = 'Сейчас открыто · до ' + pad(DATA.close) + ':00';
-    else t = 'Сегодня откроемся в ' + DATA.open + ':00 · до ' + pad(DATA.close) + ':00';
+    var n = omskNow(), h = n.getHours(), d = n.getDay(), y = (d + 6) % 7, t, open, till;
+    if (h < DATA.close[y]) { open = true; till = DATA.close[y]; }          // ночь после вчерашнего дня
+    else if (h >= DATA.open) { open = true; till = DATA.close[d]; }
+    else { open = false; till = DATA.close[d]; }
+    if (open) t = 'Сейчас открыто · до ' + pad(till) + ':00';
+    else t = 'Сегодня откроемся в ' + DATA.open + ':00 · до ' + pad(till) + ':00';
     st.classList.toggle('is-open', open);
     st.querySelector('span').textContent = t;
   }
@@ -140,6 +152,12 @@
     var b = e.target.closest('.mood'); if (b) pick(+b.dataset.i);
   });
   out.innerHTML = '<p>Выберите настроение вечера</p><span>Мы не требуем быть экспертом — достаточно сказать, что вы любите.</span>';
+
+  /* отзывы */
+  $('#rv').innerHTML = DATA.reviews.map(function (r) {
+    return '<figure class="rv__c reveal"><div class="rv__stars" aria-label="5 из 5">★★★★★</div><blockquote>' + esc(r[2]) + '</blockquote>' +
+      '<figcaption><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + ' · Яндекс Карты</span></figcaption></figure>';
+  }).join('');
 
   /* галерея (появится, когда будут фото) */
   if (DATA.gallery.length) {

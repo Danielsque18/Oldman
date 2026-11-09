@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Oldman Club — лаундж-клуб в Омске, Гагарина 14</title>
-<meta name="description" content="Oldman Club — лаундж-клуб в атмосфере закрытого английского клуба: сигары, кальяны, классические коктейли, бильярд и VIP-комната. Омск, Гагарина 14, 5 этаж. Бронь: +7 929 361-20-00.">
+<title>Oldman Club — сигарный клуб в Омске, Гагарина 14</title>
+<meta name="description" content="Oldman Club — сигарный клуб в Омске: атмосфера закрытого английского клуба, сигары, кальяны, классические коктейли, бильярд и VIP-комната. Омск, Гагарина 14, 5 этаж. Бронь: +7 929 361-20-00.">
 <meta name="theme-color" content="#0b0a08">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Oldman Club — лаундж-клуб в Омске">
+<meta property="og:title" content="Oldman Club — сигарный клуб в Омске">
 <meta property="og:description" content="Пространство для важных мыслей и встреч. Сигары, кальяны, коктейли, бильярд, VIP-комната. Гагарина 14, 5 этаж.">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://oldmanclub.ru/img/og.jpg">
+<meta property="og:url" content="https://oldmanclub.ru/">
+<link rel="canonical" href="https://oldmanclub.ru/">
 <link rel="icon" href="img/logo-mark.png">
 <link rel="preload" href="fonts/playfair-display-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=10">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BarOrPub","name":"Oldman Club","description":"Лаундж-клуб в атмосфере закрытого английского клуба","telephone":"+7 929 361-20-00","address":{"@type":"PostalAddress","streetAddress":"ул. Гагарина, 14, 5 этаж","addressLocality":"Омск","addressCountry":"RU"},"openingHours":"Mo-Su 17:00-02:00","sameAs":["https://vk.com/club239764791"]}
+{"@context":"https://schema.org","@type":"BarOrPub","name":"Oldman Club","description":"Сигарный клуб: атмосфера закрытого английского клуба, сигары, кальяны, коктейли, бильярд","telephone":"+7 929 361-20-00","address":{"@type":"PostalAddress","streetAddress":"ул. Гагарина, 14, 5 этаж","addressLocality":"Омск","addressCountry":"RU"},"openingHours":["Su-Th 17:00-02:00","Fr-Sa 17:00-04:00"],"url":"https://oldmanclub.ru/","sameAs":["https://vk.com/club239764791"]}
 </script>
 </head>
 <body>
@@ -43,6 +45,7 @@
     <a href="#bar">Бар</a>
     <a href="#billiards">Бильярд</a>
     <a href="#events">События</a>
+    <a href="#reviews">Отзывы</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <a class="btn btn--gold btn--sm top__book" href="https://oldman.restoplace.ws/?source=site&amp;floor=47790" target="_blank" rel="noopener">Бронь стола</a>
@@ -56,17 +59,17 @@
     <source media="(max-width:767px)" srcset="img/hero-m.jpg">
     <img src="img/hero.jpg" alt="Зал Oldman Club: ореховые панели, кожаные кресла, люстра над баром" fetchpriority="high">
   </picture>
-  <video class="hero__smoke" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="video/smoke.mp4" type="video/mp4"></video>
+  <video class="hero__promo" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="video/promo.mp4" type="video/mp4"></video>
   <div class="hero__shade"></div>
   <div class="hero__in wrap">
-    <p class="eyebrow"><span class="band">Лаундж-клуб</span> Омск · Гагарина 14 · 5 этаж</p>
+    <p class="eyebrow"><span class="band">Сигарный клуб</span> Омск · Гагарина 14 · 5 этаж</p>
     <h1 class="hero__h"><span>Пространство</span> <span>для важных мыслей</span> <span><em>и встреч</em></span></h1>
     <p class="hero__p">Атмосфера закрытого английского клуба: сигары, кальяны, классические коктейли, бильярд и уютная VIP-комната.</p>
     <div class="hero__cta">
       <a class="btn btn--gold" href="https://oldman.restoplace.ws/?source=site&amp;floor=47790" target="_blank" rel="noopener">Забронировать стол</a>
       <a class="btn btn--ghost" href="tel:+79293612000">+7 929 361-20-00</a>
     </div>
-    <p class="status" id="status"><i></i><span>Сегодня с 17:00 до 02:00</span></p>
+    <p class="status" id="status"><i></i><span>Каждый вечер с 17:00</span></p>
   </div>
   <a class="hero__down" href="#club" aria-label="Листать дальше"></a>
 </section>
@@ -76,7 +79,7 @@
     <div><b>50</b><span>посадочных мест</span></div>
     <div><b>7</b><span>мест в VIP-комнате</span></div>
     <div><b>1 500 ₽</b><span>час в бильярдной</span></div>
-    <div><b>17:00–02:00</b><span>каждый вечер</span></div>
+    <div><b>до 04:00</b><span>в пятницу и субботу, в остальные дни до 02:00</span></div>
   </div>
 </div>
 
@@ -134,7 +137,7 @@
     <p class="kicker reveal">Кальяны</p>
     <h2 class="h2 reveal">Не&nbsp;знаете, какой табак выбрать? Скажите, какой вкус любите</h2>
     <p class="lead reveal">Вам не&nbsp;нужно знать название табака. Просто скажите, чего хочется сегодня,&nbsp;— мастер подберёт вкус, микс и&nbsp;сочетание.</p>
-    <div class="price reveal"><b>1 800 ₽</b><span>кальян · разнообразные вкусы, миксы и&nbsp;сочетания</span></div>
+    <div class="hprice reveal"><div><b>1 000 ₽</b><span>кальян с&nbsp;воскресенья по&nbsp;четверг</span></div><div><b>1 800 ₽</b><span>в&nbsp;пятницу и&nbsp;субботу</span></div><p>Разнообразные вкусы, миксы и&nbsp;сочетания</p></div>
     <div class="moods" id="moods" role="tablist" aria-label="Настроение"></div>
     <div class="mood-out" id="moodOut" aria-live="polite"></div>
   </div>
@@ -173,10 +176,13 @@
   </div>
   <div class="wrap vip">
     <div class="vip__card reveal">
+      <img class="vip__img" src="img/vip.jpg" alt="VIP-комната Oldman Club: кожаные диваны, кирпичная стена, вид на ночной город" loading="lazy">
+      <div class="vip__txt">
       <p class="kicker">VIP-комната</p>
       <h3 class="h3">До&nbsp;7 гостей за&nbsp;закрытой дверью</h3>
       <p>Для деловой встречи, разговора, который не&nbsp;для всех, или маленького праздника своим кругом.</p>
       <a class="link" href="tel:+79293612000">Забронировать по телефону</a>
+      </div>
     </div>
   </div>
 </section>
@@ -194,9 +200,19 @@
       <div class="cap__i reveal"><b>до 42</b><span>гостей в основном зале</span></div>
       <div class="cap__i reveal"><b>до 7</b><span>гостей в VIP-комнате</span></div>
     </div>
-    <p class="lead reveal">Лаундж с&nbsp;мягкими креслами и&nbsp;приглушённым светом, бар с&nbsp;коктейлями, кальяны и&nbsp;сигары. Позвоните&nbsp;— обсудим дату, формат и&nbsp;количество гостей.</p>
+    <p class="lead reveal">Зал с&nbsp;мягкими креслами и&nbsp;приглушённым светом, бар с&nbsp;коктейлями, кальяны и&nbsp;сигары. Позвоните&nbsp;— обсудим дату, формат и&nbsp;количество гостей.</p>
     <a class="btn btn--gold reveal" href="tel:+79293612000">Обсудить событие</a>
   </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <p class="kicker reveal">Отзывы гостей</p>
+    <h2 class="h2 reveal">«Атмосфера классического сигарного клуба»</h2>
+    <p class="lead reveal">Восемь отзывов на&nbsp;Яндекс Картах&nbsp;— все на&nbsp;пять звёзд.</p>
+  </div>
+  <div class="rv" id="rv"></div>
+  <div class="wrap"><a class="link reveal" href="https://yandex.ru/maps/org/64488514058/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a></div>
 </section>
 
 <section class="gallery" id="gallery" hidden>
@@ -224,7 +240,7 @@
       <p class="kicker reveal">Контакты</p>
       <h2 class="h2 reveal">Гагарина 14, 5&nbsp;этаж</h2>
       <dl class="cl reveal">
-        <div><dt>Часы работы</dt><dd>каждый день, 17:00–02:00</dd></div>
+        <div><dt>Часы работы</dt><dd>вс–чт 17:00–02:00<br>пт–сб 17:00–04:00</dd></div>
         <div><dt>Бронь столов</dt><dd><a href="tel:+79293612000">+7 929 361-20-00</a></dd></div>
         <div><dt>Онлайн-бронь</dt><dd><a href="https://oldman.restoplace.ws/?source=site&amp;floor=47790" target="_blank" rel="noopener">выбрать стол на схеме зала</a></dd></div>
         <div><dt>ВКонтакте</dt><dd><a href="https://vk.com/club239764791" target="_blank" rel="noopener">Oldman Club</a></dd></div>
@@ -255,6 +271,6 @@
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
 </a>
 
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>
