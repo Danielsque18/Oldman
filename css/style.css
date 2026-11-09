@@ -401,3 +401,5 @@ section{position:relative}
   .hero__pic,.hero__promo{-webkit-mask-image:linear-gradient(#000 55%,transparent 100%);mask-image:linear-gradient(#000 55%,transparent 100%)}
   .club__tag{left:12px;top:12px;bottom:auto}
 }
+.hero__pic{transition:opacity .6s}
+.hero.is-video .hero__pic{opacity:0}
