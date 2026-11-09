@@ -196,13 +196,6 @@
   }, { passive: true });
   onScroll(); if (!reduce) orbFrame();
 
-  /* первый экран: когда ролик пошёл — прячем запасное фото под ним (иначе просвечивает в растворе) */
-  var hv = document.querySelector('.hero__promo');
-  if (hv) {
-    var onPlay = function () { if (hv.currentTime > 0) document.getElementById('hero').classList.add('is-video'); };
-    hv.addEventListener('playing', onPlay); hv.addEventListener('timeupdate', onPlay);
-  }
-
   /* видео не крутим за экраном — бережём батарею телефона */
   if ('IntersectionObserver' in window) {
     var vio = new IntersectionObserver(function (es) {
