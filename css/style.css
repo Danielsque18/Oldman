@@ -374,3 +374,30 @@ section{position:relative}
   .bar__tile--a{aspect-ratio:auto;min-height:0;height:auto;align-self:stretch}
   .bar__tile--a video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 }
+
+/* === v12: телефон — медиа без сдвигов и растяжек === */
+/* дым: только верхняя часть секции, растворяется книзу (не растягиваем на 3000px) */
+.cigars__v{height:min(100%,110vh);bottom:auto;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+
+@media (max-width:767px){
+  /* первый экран: ролик блоком сверху, без 3-кратного увеличения; текст ниже */
+  .hero{min-height:0;display:block;padding-bottom:8px}
+  .hero__pic,.hero__promo{top:0;bottom:auto;height:58vw;min-height:250px;max-height:48svh}
+  .hero__pic img{animation:none}
+  .hero__promo{object-position:50% 50%}
+  .hero__shade{background:linear-gradient(180deg,rgba(11,10,8,.55) 0,rgba(11,10,8,0) 22%,rgba(11,10,8,0) 30%,var(--ink) min(48svh,max(250px,58vw)))!important}
+  .hero__in{padding-top:calc(min(48svh,max(250px,58vw)) - 24px);padding-bottom:40px}
+
+  /* бильярд: видео и фото крупно, друг под другом, без сдвига */
+  .billiards__media{grid-template-columns:minmax(0,1fr);gap:12px}
+  .billiards__v{aspect-ratio:4/5}
+  .billiards__ph{aspect-ratio:4/3;margin:0}
+
+  /* «О клубе»: вставка внутри фото, а не за краем */
+  .club__inset{right:12px;bottom:12px;width:40%;border-width:4px}
+  .club__in{padding-bottom:0}
+}
+@media (max-width:767px){
+  .hero__pic,.hero__promo{-webkit-mask-image:linear-gradient(#000 55%,transparent 100%);mask-image:linear-gradient(#000 55%,transparent 100%)}
+  .club__tag{left:12px;top:12px;bottom:auto}
+}
